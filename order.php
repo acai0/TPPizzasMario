@@ -1,28 +1,23 @@
 <?php 
 class Order{
     public $id;
-    public $fullPrice;
-    public $extraQty;
-    public $idClient;
+    public $theExtras=array(); //corresponds aux ingredients
+    public $thePizzas=array();
 
-public function __construct($id, $fullPrice, $extraQty, $idClient){
+public function __construct($id){
     $this->id=$id;
-    $this->fullPrice=$fullPrice;
-    $this->extraQty=$extraQty;
-    $this->idClient=$idClient;
 }
 public function getId(){
     return $this->id;
 }
-public function getFullPrice(){
-    return $this->fullPrice;
+public function FullPrice(){
+    $totalPrice=0;
+    foreach ($this->thePizzas as $eachPizza){
+        foreach($this->theExtras as $eachExtra){
+              $totalPrice+=($eachPizza[3]->getPrice()*$eachPizza[6]->getQty())+ $this->eachExtra[3];
+        }
+    }
+    return $totalPrice;
 }
-public function getExtraQty(){
-    return $this->extraQty;
 }
-public function getidClient(){
-    return $this->idClient;
-}
-}
-//retirer loadoff
 ?>
