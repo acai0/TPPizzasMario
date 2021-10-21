@@ -14,7 +14,7 @@ public function FullPrice(){
     $totalPrice=0;
     foreach ($this->thePizzas as $eachPizza){
         foreach($this->theExtras as $eachExtra){
-              $totalPrice+=($eachPizza[3]->getPrice()*$eachPizza[6]->getQty())+ $this->eachExtra[3];
+              $totalPrice+=($eachPizza[3]->getPrice()*$eachPizza[5]->getQty())+ $eachExtra[3]->getPrice();
         }
     }
     return $totalPrice;
