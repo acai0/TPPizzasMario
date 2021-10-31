@@ -26,7 +26,7 @@ public function FullPrice(){
     }
     return $totalPrice;
 }
-public function retireExtra(){
+public function removeExtra(){
     $totalPrice=0;
     foreach ($this->thePizzas as $eachPizza){
         foreach($this->theExtras as $eachExtra){
