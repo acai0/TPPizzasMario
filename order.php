@@ -6,15 +6,31 @@ class Order{
 
 public function __construct($id){
     $this->id=$id;
+
 }
 public function getId(){
     return $this->id;
+}
+public function getThePizzas(){
+    return $this->thePizzas;
+}
+public function getTheExtras(){
+    return $this->theExtras;
 }
 public function FullPrice(){
     $totalPrice=0;
     foreach ($this->thePizzas as $eachPizza){
         foreach($this->theExtras as $eachExtra){
-              $totalPrice+=($eachPizza[3]->getPrice()*$eachPizza[5]->getQty())+ $eachExtra[3]->getPrice();
+              $totalPrice+=$eachPizza->getPrice() * $eachPizza->getQty() + $eachExtra->getPrice();
+        }
+    }
+    return $totalPrice;
+}
+public function retireExtra(){
+    $totalPrice=0;
+    foreach ($this->thePizzas as $eachPizza){
+        foreach($this->theExtras as $eachExtra){
+              $totalPrice+=$eachPizza->getPrice() - $eachExtra->getPrice();
         }
     }
     return $totalPrice;

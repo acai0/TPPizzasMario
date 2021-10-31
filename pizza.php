@@ -5,14 +5,12 @@ class Pizza{
     public $price;
     public $recipe;
     public $qty;
-    public $idOrder;
-    public function __construct($id, $name, $price, $recipe,$qty, $idOrder){
+    public function __construct($id, $name, $price, $recipe,$qty){
         $this->id=$id;
         $this->name=$name;
         $this->price=$price;
         $this->recipe=$recipe;
         $this->qty=$qty;
-        $this->idOrder=$idOrder;
     }
     public function getId(){
         return $this->id;
@@ -28,8 +26,5 @@ class Pizza{
     }
     public function getQty(){
         return $this->qty;
-    }
-    public function getidOrder(){
-        return $this->idOrder;
     }
 }

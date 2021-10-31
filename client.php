@@ -25,7 +25,7 @@ class Client{
     public function getPhoneNumber(){
         return $this->phoneNumber;
     }
-    public function getidOrder(){
+    public function getIdOrder(){
         return $this->idOrder;
     }
 }

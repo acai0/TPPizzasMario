@@ -1,5 +1,5 @@
 <?php
-class payment{
+class Payment{
     public $id;
     public $type;
     public $idOrder;
